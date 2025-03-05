@@ -35,16 +35,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.victorkirui.common.components.CustomTextField
 import com.victorkirui.common.components.DateTextField
 import com.victorkirui.common.components.DescriptionTextField
 import com.victorkirui.common.components.ShowDatePicker
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun AddEventRoute(
     windowSizeClass: WindowSizeClass,
-    viewModel: AddEventViewModel = viewModel(),
+    viewModel: AddEventViewModel = koinViewModel(),
     navigateBack: () -> Unit
 ) {
     val isCompact = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact
@@ -76,7 +76,9 @@ fun AddEventRoute(
             onEventNameTextValueChange = {
                 viewModel.onEventNameChange(it)
             },
-            onSaveButtonClick = { TODO() },
+            onSaveButtonClick = {
+                viewModel.saveEvent()
+                                },
             onLocationTextValueChange = {
                 viewModel.onLocationChange(it)
             },
@@ -109,12 +111,13 @@ fun AddEventRoute(
                 )
             }
             EventSaveState.Success -> {
-                navigateBack() // Navigate back when event is successfully saved
+                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
             }
             is EventSaveState.Error -> {
                 val errorMessage = (eventSaveState as EventSaveState.Error).message
                 // Show error toast
                 Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
+                viewModel.changeToIdleState()
             }
         }
     }

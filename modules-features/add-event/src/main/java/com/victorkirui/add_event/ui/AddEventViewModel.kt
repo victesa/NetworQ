@@ -2,13 +2,14 @@ package com.victorkirui.add_event.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.victorkirui.domain.usecases.SaveEventUseCase
 import com.victorkirui.domain.models.EventModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class AddEventViewModel(): ViewModel() {
+class AddEventViewModel(private val saveEventUseCase: SaveEventUseCase): ViewModel() {
 
     private var _uiState = MutableStateFlow(EventModel())
     var uiState = _uiState.asStateFlow()
@@ -76,6 +77,7 @@ class AddEventViewModel(): ViewModel() {
         viewModelScope.launch {
             try {
                 _saveEventState.value = EventSaveState.Loading
+                saveEventUseCase(uiState.value)
                 _saveEventState.value = EventSaveState.Success
                 onExit()
             }catch (e: Exception){
@@ -83,6 +85,10 @@ class AddEventViewModel(): ViewModel() {
                     EventSaveState.Error(e.message ?: "Unknown Error. Try again Later")
             }
         }
+    }
+
+    fun changeToIdleState(){
+        _saveEventState.value = EventSaveState.Idle
     }
 
     fun onExit(){

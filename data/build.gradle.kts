@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.victorkirui.add_event"
+    namespace = "com.victorkirui.data"
     compileSdk = 35
 
     defaultConfig {
@@ -31,11 +30,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
@@ -56,24 +50,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //ViewModel
-    implementation(libs.android.viewModel)
-
-    //Window Size Class
-    implementation(libs.androidx.material3.window.size)
-
-    //Coroutines
-    implementation(libs.coroutines)
 
     //Koin
-    implementation(libs.koin.core)
+    runtimeOnly(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
 
-
     //Modules
-    implementation(project(":modules-ui:common"))
-    implementation(project(":modules-ui:resources"))
+    implementation(project(":modules-sources:local"))
     implementation(project(":domain"))
-    implementation(project(":data"))
 }
