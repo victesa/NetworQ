@@ -56,4 +56,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Window Size Class
+    implementation(libs.androidx.material3.window.size)
+
+    //Modules
+    implementation(project(":modules-features:add-event"))
+    implementation(project(":modules-ui:design"))
 }
