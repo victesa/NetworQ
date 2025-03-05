@@ -21,4 +21,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "NetworQ"
 include(":app")
- 
+include(":modules-ui")
+include(":modules-ui:common")
+include(":modules-ui:design")
+include(":modules-ui:resources")
+include(":core")
+include(":core:utils")
+include(":modules-features")
+include(":modules-features:add-event")
+include(":domain")
