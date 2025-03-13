@@ -13,9 +13,12 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/utils" />
+            <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/modules-features" />
             <option value="$PROJECT_DIR$/modules-features/add-event" />
+            <option value="$PROJECT_DIR$/modules-sources" />
+            <option value="$PROJECT_DIR$/modules-sources/local" />
             <option value="$PROJECT_DIR$/modules-ui" />
             <option value="$PROJECT_DIR$/modules-ui/common" />
             <option value="$PROJECT_DIR$/modules-ui/design" />

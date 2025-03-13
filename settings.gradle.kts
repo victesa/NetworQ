@@ -16,6 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven{
+            url = uri("https://repo1.maven.org/maven2/")
+        }
     }
 }
 
@@ -30,3 +33,6 @@ include(":core:utils")
 include(":modules-features")
 include(":modules-features:add-event")
 include(":domain")
+include(":data")
+include(":modules-sources")
+include(":modules-sources:local")

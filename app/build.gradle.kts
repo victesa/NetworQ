@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -57,10 +58,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
+
     //Window Size Class
     implementation(libs.androidx.material3.window.size)
+
+    //Koin
+    runtimeOnly(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
     //Modules
     implementation(project(":modules-features:add-event"))
     implementation(project(":modules-ui:design"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":modules-sources:local"))
 }
