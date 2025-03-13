@@ -1,6 +1,7 @@
 package com.victorkirui.local
 
 import androidx.room.Room
+import com.victorkirui.local.daos.CardDao
 import com.victorkirui.local.daos.EventDao
 import com.victorkirui.local.database.NetworQDatabase
 import org.koin.android.ext.koin.androidContext
@@ -17,6 +18,10 @@ val localModule = module {
 
     single<EventDao> {
         get <NetworQDatabase>().eventDao()
+    }
+
+    single<CardDao> {
+        get<NetworQDatabase>().cardDao()
     }
 
 

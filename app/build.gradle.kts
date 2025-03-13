@@ -74,4 +74,5 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":modules-sources:local"))
+    implementation(project(":modules-features:cards"))
 }
