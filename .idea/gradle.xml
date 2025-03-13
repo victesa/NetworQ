@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/modules-features" />
             <option value="$PROJECT_DIR$/modules-features/add-event" />
+            <option value="$PROJECT_DIR$/modules-features/cards" />
             <option value="$PROJECT_DIR$/modules-sources" />
             <option value="$PROJECT_DIR$/modules-sources/local" />
             <option value="$PROJECT_DIR$/modules-ui" />

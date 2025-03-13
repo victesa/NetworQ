@@ -37,30 +37,6 @@ import com.victorkirui.design.theme.AppYellow
 import com.victorkirui.design.theme.CustomTextFieldColors
 
 @Composable
-fun CustomBasicTextField(text: String,
-                         textFieldValue: String,
-                         onTextFieldValueChange: (String) -> Unit,
-                         textLabel: String){
-    Column {
-        Text(text = text, color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
-        Spacer(modifier = Modifier.height(8.dp))
-        OutlinedTextField(
-            value = textFieldValue,
-            onValueChange = { onTextFieldValueChange(it)},
-            shape = RoundedCornerShape(10.dp),
-            modifier = Modifier.fillMaxWidth(),
-            label = {
-                Text(textLabel)
-            },
-            maxLines = 1,
-            colors = CustomTextFieldColors
-        )
-    }
-}
-
-
-
-@Composable
 fun CustomTextField(
     text: String,
     value: String,
@@ -84,7 +60,10 @@ fun CustomTextField(
                 )
                 .padding(horizontal = 12.dp)
                 .focusRequester(focusRequester)
-                .onFocusChanged { isFocused = it.isFocused } // Track focus state
+                .onFocusChanged { isFocused = it.isFocused
+                if(isFocused){
+                    focusRequester.requestFocus()
+                }} // Track focus state
                 .clickable { focusRequester.requestFocus() } // Allows clicking the whole box to focus
         ) {
             if (value.isEmpty() && !isFocused) {

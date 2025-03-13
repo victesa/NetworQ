@@ -2,9 +2,9 @@ package com.victorkirui.data
 
 import com.victorkirui.data.mappers.EventMapper
 import com.victorkirui.data.repositories.AddEventRepositoryImpl
+import com.victorkirui.data.repositories.CardRepositoryImp
 import com.victorkirui.domain.repositories.AddEventRepository
-import com.victorkirui.local.daos.EventDao
-import com.victorkirui.local.database.NetworQDatabase
+import com.victorkirui.domain.repositories.CardRepository
 import com.victorkirui.local.localModule
 import org.koin.dsl.module
 
@@ -23,6 +23,10 @@ val dataModule = module {
     }
 
 
-
+    single<CardRepository> {
+        CardRepositoryImp(
+            cardDao = get(),
+        )
+    }
 
 }
