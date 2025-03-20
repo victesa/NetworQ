@@ -25,7 +25,7 @@ val dataModule = module {
 
     single<CardRepository> {
         CardRepositoryImp(
-            cardDao = get(),
+            cardDao = get()
         )
     }
 

@@ -11,4 +11,5 @@ val cardModule = module {
     viewModel {
         AddCardViewModel(get())
     }
+
 }

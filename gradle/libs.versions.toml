@@ -17,6 +17,7 @@ koin = "3.2.0"
 room_version = "2.6.1"
 ksp = "2.0.0-1.0.24"
 runtimeAndroid = "1.7.8"
+coil = "2.0.0"
 
 
 
@@ -57,6 +58,9 @@ androidx-room-runtime = {group = "androidx.room", name = "room-runtime", version
 androidx-room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "room_version"}
 androidx-room-coroutine = {group = "androidx.room", name = "room-ktx", version.ref = "room_version"}
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+
+#Coil
+coil = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

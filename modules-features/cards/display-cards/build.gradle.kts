@@ -1,22 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.victorkirui.networq"
+    namespace = "com.victorkirui.display_cards"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.victorkirui.networq"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -35,6 +31,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
@@ -58,22 +55,21 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
-
     //Window Size Class
     implementation(libs.androidx.material3.window.size)
 
     //Koin
-    runtimeOnly(libs.koin.core)
+    implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
 
+    //Coil
+    implementation(libs.coil)
+
     //Modules
-    implementation(project(":modules-features:add-event"))
+    implementation(project(":modules-ui:resources"))
     implementation(project(":modules-ui:design"))
-    implementation(project(":data"))
+    implementation(project(":modules-ui:common"))
     implementation(project(":domain"))
-    implementation(project(":modules-sources:local"))
-    implementation(project(":modules-features:cards"))
-    implementation(project(":modules-features:cards:display-cards"))
+    implementation(project(":core:utils"))
 }
