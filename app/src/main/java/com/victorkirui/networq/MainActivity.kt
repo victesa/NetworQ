@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.victorkirui.cards.ui.AddCardRoute
+import com.victorkirui.display_cards.ui.MyCardsRoute
 import com.victorkirui.networq.ui.theme.NetworQTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,8 +34,9 @@ class MainActivity : ComponentActivity() {
             ){
                 Scaffold(modifier = Modifier.background(color = Color.Black)){
                     Column(modifier = Modifier.padding(it)){
+                        MyCardsRoute(windowSize = windowSizeClass, context = this@MainActivity)
 
-
+//                        AddCardRoute(windowSizeClass = windowSizeClass, activity = this@MainActivity)
                     }
                 }
             }
