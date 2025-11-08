@@ -59,8 +59,8 @@ The app uses a **modularized approach** to ensure separation of concerns and fas
 * **:data** - Handles Room database and repository implementations.
 * **:domain** - Contains repositories and shared usecases
 * **:modules-features** - Individual feature modules.
-* **modules-sources** -Handles logic for interacting with different data sources.
-* **modules-ui** -Contains shared UI components.
+* **:modules-sources** -Handles logic for interacting with different data sources.
+* **:modules-ui** -Contains shared UI components.
 
 ---
 
