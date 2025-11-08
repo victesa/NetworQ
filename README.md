@@ -13,10 +13,13 @@
 
 > **Design Philosophy:** The app follows modern **Material Design** principles, ensuring a clean, accessible, and intuitive user experience.
 
-![img.png](img.png)  ![img_1.png](img_1.png)
+<p align="center">
+  <img src="img.png" width="240" alt="App Screenshot 1" />
+  &nbsp;&nbsp;&nbsp;&nbsp; <img src="img_1.png" width="240" alt="App Screenshot 2" />
+</p>
 
 **View the Design Prototype:**
-https://www.figma.com/proto/5pEpDSOJiZIbbQirIpAAWc/Untitled?node-id=1-6&p=f&t=xtOAuApnmL5CKXL4-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6
+[Click here to view the Figma Prototype](https://www.figma.com/proto/5pEpDSOJiZIbbQirIpAAWc/Untitled?node-id=1-6&p=f&t=xtOAuApnmL5CKXL4-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6)
 
 ---
 
@@ -47,7 +50,7 @@ This project is built with modern Android development standards in mind, focusin
 
 ---
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 The app uses a **modularized approach** to ensure separation of concerns and faster build times.
 
