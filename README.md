@@ -57,7 +57,10 @@ The app uses a **modularized approach** to ensure separation of concerns and fas
 * **:app** - The main entry point.
 * **:core** - Contains shared logic and base classes.
 * **:data** - Handles Room database and repository implementations.
-* **:features** - Individual feature modules (e.g., `:features:events`, `:features:contacts`).
+* **:domain** - Contains repositories and shared usecases
+* **:modules-features** - Individual feature modules.
+* **modules-sources** -Handles logic for interacting with different data sources.
+* **modules-ui** -Contains shared UI components.
 
 ---
 
@@ -71,7 +74,7 @@ This project is set up for easy onboarding. You do not need any complex API keys
 
 2.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/NetworQ.git](https://github.com/yourusername/NetworQ.git)
+    git clone [https://github.com/yourusername/NetworQ.git](https://github.com/victesa/NetworQ.git)
     ```
 
 3.  **Run the App:**
